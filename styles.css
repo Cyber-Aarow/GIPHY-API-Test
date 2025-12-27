@@ -20,3 +20,7 @@ button.reroll {
     font-weight: bold;
     background-color:thistle;
 }
+
+button.reroll:active{
+    background-color: blueviolet;
+}

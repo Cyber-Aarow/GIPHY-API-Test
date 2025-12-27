@@ -11,6 +11,7 @@
     <button class="reroll">Reroll</button>
     <script>
         const img = document.querySelector('img');
+        const reroll = document.querySelector('.reroll');
 
         function newGIF(){
             fetch('https://api.giphy.com/v1/gifs/translate?api_key=555LHq2SP1qWRPV45CjrVvrxOrBPbknW&s=cats')
@@ -23,6 +24,10 @@
         }
         
         newGIF();
+
+        reroll.addEventListener('click', ()=>{
+            newGIF();
+        });
 
 
     </script>
