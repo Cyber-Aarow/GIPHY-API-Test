@@ -3,21 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GIF Finder</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <img src="" alt="">
+    <button class="reroll">Reroll</button>
     <script>
         const img = document.querySelector('img');
-        fetch('https://api.giphy.com/v1/gifs/translate?api_key=555LHq2SP1qWRPV45CjrVvrxOrBPbknW&s=cats')
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(response){
-            img.src = response.data.images.original.url;
-        });
+
+        function newGIF(){
+            fetch('https://api.giphy.com/v1/gifs/translate?api_key=555LHq2SP1qWRPV45CjrVvrxOrBPbknW&s=cats')
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(response){
+                img.src = response.data.images.original.url;
+            });
+        }
         
-        
+        newGIF();
+
+
     </script>
 </body>
 </html>
