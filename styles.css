@@ -14,13 +14,32 @@ body{
     gap: 1rem;
 }
 
-button.reroll {
+form {
+    display: flex;
+}
+
+input#search-bar{
+    border: 2px black solid;
+    width: 15rem;
+    height: 2rem;
+}
+
+button#search-button{
+    height: 2rem;
+    padding: 0 1rem;
+    font-weight: bold;
+}
+
+button#reroll {
     padding: 0.5rem 2rem;
     font-size: larger;
     font-weight: bold;
+}
+
+button{
     background-color:thistle;
 }
 
-button.reroll:active{
+button:active{
     background-color: blueviolet;
 }
