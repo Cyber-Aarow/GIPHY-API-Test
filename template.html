@@ -21,17 +21,14 @@
 
         let searchValue = "cats";
 
-        function newGIF(){
-            fetch(`https://api.giphy.com/v1/gifs/translate?api_key=555LHq2SP1qWRPV45CjrVvrxOrBPbknW&s=${searchValue}`)
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(response){
-                img.src = response.data.images.original.url;
-            })
-            .catch(function(err){
-                alert(err);
-            });
+        async function newGIF(){
+            try{
+            const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=555LHq2SP1qWRPV45CjrVvrxOrBPbknW&s=${searchValue}`)
+            const gifData = await response.json();
+            img.src = gifData.data.images.original.url;
+            } catch(error){
+                alert(error);
+            }
         }
         
         newGIF();
